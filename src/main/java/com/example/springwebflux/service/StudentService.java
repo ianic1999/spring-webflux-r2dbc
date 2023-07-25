@@ -31,7 +31,7 @@ public class StudentService {
                 .map(studentDtoMapper::mapList);
     }
 
-    public Mono<StudentDto> findById(Long id) {
+    public Mono<StudentDto> getById(Long id) {
         return studentRepository.findById(id)
                 .flatMap(this::enrichWithBooks)
                 .map(studentDtoMapper::map);
